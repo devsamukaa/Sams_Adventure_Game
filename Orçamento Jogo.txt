@@ -1,0 +1,61 @@
+( OK ) Fundos
+	- Game Background  -> $12 
+
+( OK ) Personagens (pelo menos 4) 
+	( OK ) - Andando
+	( OK ) - Pulando
+	( OK ) - Atirando/Atacando
+	( OK ) - Tomando Dano
+	( OK ) - Morrendo
+	( OK ) - Voando(extra)*
+	- Game Character Sprite 07 -> 9$
+	- Game Character Sprite 08 -> 9$
+	- Vampire Boy Game Sprites -> 12$
+	- Game Character Sprite 10 -> 12$
+	- Game Character Sprite 15 -> 12$
+
+( OK ) Plataformas e ornamentos (pelo menos 10 tipos de cada)
+( OK ) Plataformas móveis
+( OK ) Água
+( OK ) Coletáveis
+	- Platformer Game Kits -> 9$ + ???
+
+( OK ) Inimigos (pelo menos uns 10)
+	- Cartoon Enemy Pack 02 -> $8
+	- Cartoon Enemy Pack 01 -> $12
+	- Tiny Style Warrior -> $10
+	- Tiny Style Knight -> 8$
+	- Tiny Style Witcher -> 8$
+
+
+( OK ) UI Interface 
+( OK ) Telas de fase (pelo menos 10)
+	- Mobile Game GUI Pack 02 ->$12
+	- Cartoon Games GUI Pack 9 -> $11
+
+( OK ) Título do jogo -> Game Title -> $5
+( OK ) Sons para tuuuuuudooo
+	( OK ) Músicas para o jogo 2 músicas $35
+		- Game by HitsLab in Jazz -> $19 -> 10,000
+		- Jazz by logobit in Cinematic -> $16 -> 10,000
+	( OK ) MENU
+		- Baixado já
+	( OK ) COLETÁVEIS
+		https://kenney.nl/assets/digital-audio
+		https://kenney.nl/assets/music-jingles
+		https://soundimage.org/sfx-alerts/
+		https://soundimage.org/sfx-combat/
+	
+	( OK ) PERSONAGENS -> MASCULINO E FEMININO
+		( OK ) - Pulando
+		( OK ) - Atirando/Atacando
+		( OK ) - Tomando Dano
+		( OK ) - Morrendo
+		( OK ) - Voando(extra)*
+
+	( OK ) INIMIGOS -> MASCULINO E FEMININO
+		( OK ) - Pulando
+		( OK ) - Atirando/Atacando
+		( OK ) - Tomando Dano
+		( OK ) - Morrendo
+	
