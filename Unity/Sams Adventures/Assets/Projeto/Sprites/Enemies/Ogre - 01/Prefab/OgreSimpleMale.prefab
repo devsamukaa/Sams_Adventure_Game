@@ -461,8 +461,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collision: {fileID: 692277764}
   groundCheck: {fileID: 1763330467}
-  suspenseGroundMode: 0
-  startMoveToRight: 0
+  suspenseGroundMode: 1
+  startMoveToRight: 1
 --- !u!114 &692277764
 MonoBehaviour:
   m_ObjectHideFlags: 0

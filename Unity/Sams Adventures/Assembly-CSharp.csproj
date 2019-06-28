@@ -58,10 +58,12 @@
      <Compile Include="Assets\Projeto\Scripts\Camera\ControllerCamera.cs" />
      <Compile Include="Assets\Projeto\Scripts\Enemies\EnemyGroundController.cs" />
      <Compile Include="Assets\Projeto\Scripts\Enemies\HorizontalSuspenseGroundMove.cs" />
+     <Compile Include="Assets\Projeto\Scripts\HeroPhysicsMechanics\BetterJumping.cs" />
+     <Compile Include="Assets\Projeto\Scripts\HeroPhysicsMechanics\CollisionController.cs" />
+     <Compile Include="Assets\Projeto\Scripts\HeroPhysicsMechanics\MechanicsPlayerController.cs" />
+     <Compile Include="Assets\Projeto\Scripts\HeroPhysicsMechanics\MeleeWeaponAtackController.cs" />
      <Compile Include="Assets\Projeto\Scripts\Parallax\ParallaxEffect.cs" />
-     <Compile Include="Assets\Projeto\Scripts\PhysicsMechanics\BetterJumping.cs" />
-     <Compile Include="Assets\Projeto\Scripts\PhysicsMechanics\CollisionController.cs" />
-     <Compile Include="Assets\Projeto\Scripts\PhysicsMechanics\MechanicsPlayerController.cs" />
+     <Compile Include="Assets\Projeto\Scripts\SpecialHeroActions\Samira\RangeAxeWeaponController.cs" />
      <Compile Include="Assets\Projeto\Sprites\Heroes\Samira\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
      <Compile Include="Assets\Projeto\Sprites\Heroes\Samira\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
      <Compile Include="Assets\Projeto\Sprites\Heroes\Samira\Spriter2UnityDX\Runtime\TextureController.cs" />

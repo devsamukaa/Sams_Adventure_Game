@@ -63,6 +63,16 @@ public class EnemyGroundController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.CompareTag("MeleeWeaponArea"))
+        {
+            if(isAlive)
+            {
+                Die();
+            }
+        }
+    }
+
     void Die()
     {
         isAlive = false;
