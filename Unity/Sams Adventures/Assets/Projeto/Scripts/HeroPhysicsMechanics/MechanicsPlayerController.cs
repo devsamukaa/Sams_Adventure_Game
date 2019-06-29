@@ -5,10 +5,10 @@ using UnityEngine;
 public class MechanicsPlayerController : MonoBehaviour
 {
 
-    private CollisionController     coll;
-    private Rigidbody2D             playerRigidBody;
-    public  Transform               groundCheck;
-    private Animator                playerAnimator;
+    private CollisionController         coll;
+    private Rigidbody2D                 playerRigidBody;
+    public  Transform                   groundCheck;
+    private Animator                    playerAnimator;
 
     [Space]
     [Header("Stats")]
@@ -35,7 +35,7 @@ public class MechanicsPlayerController : MonoBehaviour
     public int                      maxJumps = 2;
     public int                      numberJumps = 0; 
 
-    public  bool                    facingRight = true;
+    public bool                     facingRight = true;
 
     void Start()
     {
@@ -55,8 +55,6 @@ public class MechanicsPlayerController : MonoBehaviour
        {
            Walk(dir);
        }
-        
-        
         
         isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         playerAnimator.SetBool("isGrounded", isGrounded);
@@ -160,8 +158,10 @@ public class MechanicsPlayerController : MonoBehaviour
 
     private void WallJump()
     {
-        
-        Flip();
+        if(xRaw == 0)
+        {
+            Flip();
+        }
         
         playerRigidBody.velocity = new Vector2(0,0);
         StopCoroutine(DisableMovement(0));

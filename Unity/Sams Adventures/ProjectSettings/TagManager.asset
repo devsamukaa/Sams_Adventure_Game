@@ -8,6 +8,7 @@ TagManager:
   - CollectBlock
   - BrickBlock
   - MeleeWeaponArea
+  - RangeWeaponArea
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - BlocosQuebraveisColetaveis
   - BlockParticles
   - ExplosionParticles
-  - 
-  - 
+  - RangeWeapon
+  - Player
   - 
   - 
   - 

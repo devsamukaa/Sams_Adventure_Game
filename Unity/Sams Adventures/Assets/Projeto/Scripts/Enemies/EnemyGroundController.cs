@@ -61,6 +61,14 @@ public class EnemyGroundController : MonoBehaviour
                 Die();
             }
         }
+
+        if(other.gameObject.CompareTag("RangeWeaponArea"))
+        {
+            if(isAlive)
+            {
+                Die();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

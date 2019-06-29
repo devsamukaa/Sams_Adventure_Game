@@ -7,7 +7,7 @@ public class MeleeWeaponAtackController : MonoBehaviour
     
     private GameObject[] collidersOfMeleeWeaponAtack;
     private Animator playerAnimator;
-    private bool isSlashing = false;
+    public bool isSlashing = false;
 
     void Start()
     {
