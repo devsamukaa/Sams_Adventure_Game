@@ -25,6 +25,7 @@ public class MechanicsPlayerController : MonoBehaviour
     public bool                     wallSlide;
     public bool                     isGrounded;
     public bool                     wallSliding;
+    public bool                     isColiderInBridgeWood;
 
     [Space]
     [Header("Variables")]
@@ -60,17 +61,16 @@ public class MechanicsPlayerController : MonoBehaviour
         playerAnimator.SetBool("isGrounded", isGrounded);
         PlayAnimations();
 
-        if(coll.onWall && !isGrounded)
+        if(coll.onWall && !isGrounded && playerRigidBody.velocity.y < 0 && !isColiderInBridgeWood)
         { 
 
+            wallSliding = true;
             numberJumps = 0;
 
             if(wallSliding)
             {
                 WallSlide();
                 playerAnimator.SetBool("onWall", true);
-            }else{
-                Invoke("DelayWallSliding", 0.14f);
             }
             
         }else{
@@ -87,7 +87,7 @@ public class MechanicsPlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (coll.onWall && !isGrounded && numberJumps < maxJumps)
+            if (coll.onWall && !isGrounded && numberJumps < maxJumps && !isColiderInBridgeWood)
                 WallJump();
 
             else if (numberJumps < maxJumps )
@@ -126,11 +126,6 @@ public class MechanicsPlayerController : MonoBehaviour
         if(x < 0 && facingRight || (x > 0 && !facingRight)){
             Flip();
         }
-    }
-
-    private void DelayWallSliding()
-    {
-        wallSliding = true;
     }
 
     private void WallSlide()
@@ -200,4 +195,21 @@ public class MechanicsPlayerController : MonoBehaviour
         numberJumps++;
     }
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        
+        if(other.gameObject.CompareTag("BridgeWood")){
+            isColiderInBridgeWood = true;
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D other) {
+        if(other.gameObject.CompareTag("BridgeWood")){
+            Invoke("DisableColisionBridgeWood", 1f);
+        }
+    }
+
+    void DisableColisionBridgeWood(){
+        isColiderInBridgeWood = false;
+    }
 }

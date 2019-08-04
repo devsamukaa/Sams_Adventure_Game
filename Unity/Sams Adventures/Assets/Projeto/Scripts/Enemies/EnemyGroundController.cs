@@ -12,13 +12,13 @@ public class EnemyGroundController : MonoBehaviour
     private HorizontalSuspenseGroundMove myMovementController;
     public CollisionController collision;
     public BoxCollider2D groundCheck;
+    private GameObject hitEffector;
 
     private bool isAlive = true;
-    private bool facingRight;
+    public bool facingRight;
     public bool suspenseGroundMode = true;
     public bool startMoveToRight = true;
     
-
 
     void Start()
     {
@@ -26,6 +26,7 @@ public class EnemyGroundController : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<BoxCollider2D>();
         myMovementController = GetComponentInChildren(typeof(HorizontalSuspenseGroundMove)) as HorizontalSuspenseGroundMove;
+        hitEffector = transform.Find("HitEffector").gameObject;
 
         if(!suspenseGroundMode)
         {
@@ -66,6 +67,7 @@ public class EnemyGroundController : MonoBehaviour
         {
             if(isAlive)
             {
+                showHitEffector();
                 Die();
             }
         }
@@ -79,6 +81,14 @@ public class EnemyGroundController : MonoBehaviour
                 Die();
             }
         }
+    }
+
+    void showHitEffector()
+    {
+        if(myMovementController.move < 0){
+            hitEffector.transform.localScale = new Vector3(hitEffector.transform.localScale.x*-1, hitEffector.transform.localScale.y, hitEffector.transform.localScale.z);
+        }
+        hitEffector.SetActive(true);
     }
 
     void Die()

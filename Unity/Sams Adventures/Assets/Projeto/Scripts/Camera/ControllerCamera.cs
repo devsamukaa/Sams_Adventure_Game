@@ -1,30 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ControllerCamera : MonoBehaviour
 {
-    private Vector2     velocidade;
-    private Transform   player;
-
-    public float        smoothTimeX = 0.5f;
-    public float        smoothTimeY = 0.5f;
-
-    float posX;
-
-    float posY;
+    private Rigidbody2D   playerRigidBody;
+    private float       timeStopped;
+    private float       ortoGraphicSize;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("SamKarina").GetComponent<Transform>();
+        playerRigidBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        ortoGraphicSize = GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize;
     }
 
     // Update is called once per frame
     void Update()
     {
-        posX = Mathf.SmoothDamp(transform.position.x, player.position.x, ref velocidade.x, smoothTimeX);
-        posY = Mathf.SmoothDamp(transform.position.y, player.position.y+3, ref velocidade.y, smoothTimeY);
-        transform.position = new Vector3(posX, posY, transform.position.z);
-    }   
+        if(playerRigidBody.velocity.x == 0 && playerRigidBody.velocity.x == 0){
+            timeStopped += Time.deltaTime;
+        }else
+        {
+            timeStopped = 0;
+        }
+
+        if(timeStopped > 2f){
+            ortoGraphicSize = Mathf.Lerp(ortoGraphicSize, 6, Time.deltaTime/2);
+            GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = ortoGraphicSize;
+        }else{
+            ortoGraphicSize = Mathf.Lerp(ortoGraphicSize, 7f, Time.deltaTime/2);
+            GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = ortoGraphicSize;
+        }
+    }
 }
