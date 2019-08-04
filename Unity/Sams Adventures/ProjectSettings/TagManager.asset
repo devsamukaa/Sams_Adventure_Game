@@ -9,6 +9,10 @@ TagManager:
   - BrickBlock
   - MeleeWeaponArea
   - RangeWeaponArea
+  - CinemachineCam
+  - BridgeWood
+  - FxTemporaire
+  - Enemy
   layers:
   - Default
   - TransparentFX
